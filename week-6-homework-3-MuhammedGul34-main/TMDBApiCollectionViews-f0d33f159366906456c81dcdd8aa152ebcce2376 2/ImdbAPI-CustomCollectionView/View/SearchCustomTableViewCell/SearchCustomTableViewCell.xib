@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="256" id="KGk-i7-Jjw" customClass="SearchCustomTableViewCell" customModule="ImdbAPI_CustomCollectionView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="460" height="256"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="460" height="256"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Poo-IV-uDE">
+                        <rect key="frame" x="8" y="36.333333333333329" width="144" height="211.66666666666669"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="211.66999999999999" id="WpV-eB-Eer"/>
+                            <constraint firstAttribute="width" constant="144" id="kML-sr-RRZ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faN-2B-peb">
+                        <rect key="frame" x="8" y="7.9999999999999982" width="444" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="textColor" systemColor="systemRedColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJf-vf-KVx">
+                        <rect key="frame" x="154" y="36.333333333333336" width="304" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="BJf-vf-KVx" firstAttribute="leading" secondItem="Poo-IV-uDE" secondAttribute="trailing" constant="2" id="8N4-0u-3MC"/>
+                    <constraint firstItem="Poo-IV-uDE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Byr-vH-0l6"/>
+                    <constraint firstItem="BJf-vf-KVx" firstAttribute="leading" secondItem="Poo-IV-uDE" secondAttribute="trailing" constant="2" id="DbD-vD-l7V"/>
+                    <constraint firstItem="faN-2B-peb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="FIf-1S-YDe"/>
+                    <constraint firstItem="Poo-IV-uDE" firstAttribute="top" secondItem="faN-2B-peb" secondAttribute="bottom" constant="8" id="FtJ-hN-eBr"/>
+                    <constraint firstAttribute="trailing" secondItem="BJf-vf-KVx" secondAttribute="trailing" constant="2" id="J4l-Ja-aBC"/>
+                    <constraint firstItem="BJf-vf-KVx" firstAttribute="top" secondItem="faN-2B-peb" secondAttribute="bottom" constant="8" id="L7V-e1-eB8"/>
+                    <constraint firstAttribute="bottom" secondItem="Poo-IV-uDE" secondAttribute="bottom" constant="8" id="SYD-Is-7bx"/>
+                    <constraint firstAttribute="trailing" secondItem="faN-2B-peb" secondAttribute="trailing" constant="8" id="Uge-Vj-UO2"/>
+                    <constraint firstItem="BJf-vf-KVx" firstAttribute="top" secondItem="faN-2B-peb" secondAttribute="bottom" constant="8" id="X9T-Oj-J1g"/>
+                    <constraint firstItem="faN-2B-peb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="dlh-Qb-Xv2"/>
+                    <constraint firstAttribute="trailing" secondItem="BJf-vf-KVx" secondAttribute="trailing" constant="2" id="kbM-tR-oxa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="movieExpNAme" destination="BJf-vf-KVx" id="K7g-o2-yAe"/>
+                <outlet property="movieImage" destination="Poo-IV-uDE" id="gU8-aF-JyI"/>
+                <outlet property="movieNameLabel" destination="faN-2B-peb" id="Th0-57-DsE"/>
+            </connections>
+            <point key="canvasLocation" x="161.83206106870227" y="93.661971830985919"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

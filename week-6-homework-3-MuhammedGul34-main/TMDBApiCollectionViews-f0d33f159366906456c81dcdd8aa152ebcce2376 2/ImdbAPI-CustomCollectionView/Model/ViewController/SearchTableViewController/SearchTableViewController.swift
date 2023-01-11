@@ -57,9 +57,6 @@ class SearchTableViewController: UITableViewController {
     }
 }
     
-    
-    
-    
 extension SearchTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
@@ -76,8 +73,6 @@ extension SearchTableViewController {
     }
 }
 
-extension SearchTableViewController {
-    
-}
+
     
 

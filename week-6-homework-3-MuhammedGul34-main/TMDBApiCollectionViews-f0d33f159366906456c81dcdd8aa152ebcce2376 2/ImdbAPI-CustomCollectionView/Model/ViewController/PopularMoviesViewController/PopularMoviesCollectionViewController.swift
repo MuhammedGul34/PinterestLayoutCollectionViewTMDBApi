@@ -10,7 +10,9 @@ import AVKit
 import AVFoundation
 
 class PopularMoviesCollectionViewController: UICollectionViewController {
- 
+    
+    var data : PopularMoviesCustomCell?
+    
     var movies : [Result]? {
         didSet {
             DispatchQueue.main.async {
@@ -84,6 +86,8 @@ extension PopularMoviesCollectionViewController : PinterestLayoutDelegate
 {
     func collectionView(collectionView: UICollectionView, heightForPhotoAt indexPath: IndexPath, with width: CGFloat) -> CGFloat
     {
+        
+        
         let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
         // TODO: fix This
     

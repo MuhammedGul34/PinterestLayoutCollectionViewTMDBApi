@@ -56,7 +56,7 @@
             <connections>
                 <outlet property="movieExpNAme" destination="BJf-vf-KVx" id="K7g-o2-yAe"/>
                 <outlet property="movieImage" destination="Poo-IV-uDE" id="gU8-aF-JyI"/>
-                <outlet property="movieNameLabel" destination="faN-2B-peb" id="Th0-57-DsE"/>
+                <outlet property="movienameLabel" destination="faN-2B-peb" id="Th0-57-DsE"/>
             </connections>
             <point key="canvasLocation" x="161.83206106870227" y="93.661971830985919"/>
         </tableViewCell>

@@ -10,7 +10,7 @@ import UIKit
 class SearchCustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var movieExpNAme: UILabel!
-    @IBOutlet weak var movieNameLabel: UILabel!
+    @IBOutlet weak var movienameLabel: UILabel!
     @IBOutlet weak var movieImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +23,7 @@ class SearchCustomTableViewCell: UITableViewCell {
     }
     
     func onBind(data:Result){
-        movieNameLabel.text = data.title
+        movienameLabel.text = data.title
         movieExpNAme.text = data.overview
         
         guard let url = URL(string: "https://image.tmdb.org/t/p/w342/\(data.posterPath)") else { return }
@@ -36,7 +36,7 @@ class SearchCustomTableViewCell: UITableViewCell {
             }
             if let data = data {
                 do {
-                    let datas = try data
+                    let datas = try data 
                     DispatchQueue.main.async {
                         self.movieImage.image = UIImage(data: datas)
                     }

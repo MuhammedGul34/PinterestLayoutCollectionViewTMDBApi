@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AmB-N5-9Cc">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3ec-G1-jhI">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="AmB-N5-9Cc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="waN-BA-IE0">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="5XB-iY-4qk" kind="relationship" relationship="viewControllers" id="XuK-gt-GY1"/>
+                        <segue destination="qIW-8T-rNB" kind="relationship" relationship="viewControllers" id="JGI-bk-Ktt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SzR-T1-S4j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.671755725190835" y="3.5211267605633805"/>
+        </scene>
+        <!--Movies-->
+        <scene sceneID="0tf-tg-rje">
+            <objects>
+                <tableViewController id="qIW-8T-rNB" customClass="PopularMoviesTableViewController" customModule="ImdbAPI_CustomCollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="singleLineEtched" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="j82-OC-Whv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="SOS-h3-QFO" customClass="MoviesTableViewCell" customModule="ImdbAPI_CustomCollectionView" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.333332061767578" width="353" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SOS-h3-QFO" id="HrW-xe-5eT">
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qIW-8T-rNB" id="RV3-mw-iBd"/>
+                            <outlet property="delegate" destination="qIW-8T-rNB" id="HVO-6h-W5j"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Movies" image="popcorn" catalog="system" selectedImage="popcorn.fill" id="kBM-2M-eTD"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aV4-EF-RMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024" y="4"/>
+        </scene>
+        <!--ART-->
+        <scene sceneID="PXy-jx-X7h">
+            <objects>
+                <collectionViewController id="5XB-iY-4qk" customClass="MuseumsCollectionViewController" customModule="ImdbAPI_CustomCollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="1Mf-0W-mDe">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewLayout key="collectionViewLayout" id="fdY-Gf-VNa" customClass="PinterestLayout" customModule="ImdbAPI_CustomCollectionView" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCell" id="pd5-HN-E1r" customClass="ArtOfMuseumCustomCell" customModule="ImdbAPI_CustomCollectionView" customModuleProvider="target">
+                                <rect key="frame" x="23.666666666666668" y="0.0" width="346" height="288"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QFj-yt-rIr">
+                                    <rect key="frame" x="0.0" y="0.0" width="346" height="288"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XOQ-ZZ-bIu">
+                                            <rect key="frame" x="0.0" y="0.0" width="346" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="9SS-oN-zrd"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFe-RH-KeK">
+                                            <rect key="frame" x="4" y="208" width="342" height="15.666666666666657"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                            <color key="textColor" red="0.91976243260000001" green="0.37678918839999997" blue="0.091903057560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32e-eT-a4u">
+                                            <rect key="frame" x="0.0" y="223.66666666666666" width="346" height="20.333333333333343"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="32e-eT-a4u" firstAttribute="top" secondItem="LFe-RH-KeK" secondAttribute="bottom" constant="8" id="0Su-r8-iqe"/>
+                                        <constraint firstItem="32e-eT-a4u" firstAttribute="top" secondItem="LFe-RH-KeK" secondAttribute="bottom" id="0eO-Z4-i3c"/>
+                                        <constraint firstItem="32e-eT-a4u" firstAttribute="leading" secondItem="QFj-yt-rIr" secondAttribute="leading" id="2bH-Gl-aoo"/>
+                                        <constraint firstItem="LFe-RH-KeK" firstAttribute="top" secondItem="XOQ-ZZ-bIu" secondAttribute="bottom" constant="4" id="6JE-KS-6Bu"/>
+                                        <constraint firstItem="LFe-RH-KeK" firstAttribute="top" secondItem="XOQ-ZZ-bIu" secondAttribute="bottom" constant="8" id="6tX-aN-Mbw"/>
+                                        <constraint firstItem="XOQ-ZZ-bIu" firstAttribute="top" secondItem="QFj-yt-rIr" secondAttribute="top" id="7Wo-O6-xSE"/>
+                                        <constraint firstAttribute="trailing" secondItem="XOQ-ZZ-bIu" secondAttribute="trailing" id="7uG-95-MFi"/>
+                                        <constraint firstItem="LFe-RH-KeK" firstAttribute="leading" secondItem="QFj-yt-rIr" secondAttribute="leading" id="FQZ-mn-37s"/>
+                                        <constraint firstItem="LFe-RH-KeK" firstAttribute="top" secondItem="XOQ-ZZ-bIu" secondAttribute="bottom" constant="8" symbolic="YES" id="OUG-di-6wf"/>
+                                        <constraint firstItem="XOQ-ZZ-bIu" firstAttribute="top" secondItem="QFj-yt-rIr" secondAttribute="top" id="Tc3-t8-oTh"/>
+                                        <constraint firstAttribute="trailing" secondItem="LFe-RH-KeK" secondAttribute="trailing" constant="4" id="a0K-up-fqG"/>
+                                        <constraint firstItem="XOQ-ZZ-bIu" firstAttribute="leading" secondItem="QFj-yt-rIr" secondAttribute="leading" id="bBC-4p-Chc"/>
+                                        <constraint firstAttribute="trailing" secondItem="32e-eT-a4u" secondAttribute="trailing" id="fjV-of-6SC"/>
+                                        <constraint firstItem="LFe-RH-KeK" firstAttribute="top" secondItem="XOQ-ZZ-bIu" secondAttribute="bottom" constant="8" id="gou-ek-Inf"/>
+                                        <constraint firstItem="XOQ-ZZ-bIu" firstAttribute="leading" secondItem="QFj-yt-rIr" secondAttribute="leading" id="hhh-hr-IZG"/>
+                                        <constraint firstItem="LFe-RH-KeK" firstAttribute="leading" secondItem="QFj-yt-rIr" secondAttribute="leading" constant="4" id="mnQ-CH-gLG"/>
+                                        <constraint firstItem="LFe-RH-KeK" firstAttribute="top" secondItem="XOQ-ZZ-bIu" secondAttribute="bottom" constant="8" id="pvU-go-qfT"/>
+                                        <constraint firstItem="LFe-RH-KeK" firstAttribute="top" secondItem="XOQ-ZZ-bIu" secondAttribute="bottom" constant="8" id="qAW-q3-4pA"/>
+                                        <constraint firstItem="32e-eT-a4u" firstAttribute="top" secondItem="LFe-RH-KeK" secondAttribute="bottom" id="qLs-rQ-f0n"/>
+                                        <constraint firstAttribute="trailing" secondItem="LFe-RH-KeK" secondAttribute="trailing" id="tXo-S5-dno"/>
+                                        <constraint firstAttribute="trailing" secondItem="XOQ-ZZ-bIu" secondAttribute="trailing" id="umw-Sb-D1C"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="346" height="288"/>
+                                <connections>
+                                    <outlet property="artDescriptonLabel" destination="32e-eT-a4u" id="1fi-hS-mP1"/>
+                                    <outlet property="artImage" destination="XOQ-ZZ-bIu" id="q8K-yT-eYE"/>
+                                    <outlet property="artNameLabel" destination="LFe-RH-KeK" id="xKi-eg-bS0"/>
+                                    <outlet property="heightContraint" destination="9SS-oN-zrd" id="AyJ-b1-YYK"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="5XB-iY-4qk" id="g5a-HR-wLx"/>
+                            <outlet property="delegate" destination="5XB-iY-4qk" id="8IA-mc-7iV"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="ART" image="building.columns" catalog="system" id="4fA-W7-k9J"/>
+                    <connections>
+                        <outlet property="collectionView" destination="1Mf-0W-mDe" id="WTT-pP-JgB"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qlA-dT-E1B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-692.36641221374043" y="714.78873239436621"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="building.columns" catalog="system" width="128" height="112"/>
+        <image name="popcorn" catalog="system" width="102" height="128"/>
+        <image name="popcorn.fill" catalog="system" width="102" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

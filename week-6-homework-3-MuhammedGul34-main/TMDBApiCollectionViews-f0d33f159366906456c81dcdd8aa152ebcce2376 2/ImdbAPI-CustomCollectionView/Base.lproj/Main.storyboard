@@ -117,35 +117,45 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFe-RH-KeK">
-                                            <rect key="frame" x="0.0" y="208" width="346" height="15.666666666666657"/>
+                                            <rect key="frame" x="4" y="208" width="342" height="15.666666666666657"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                             <color key="textColor" red="0.91976243260000001" green="0.37678918839999997" blue="0.091903057560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32e-eT-a4u">
-                                            <rect key="frame" x="0.0" y="223.66666666666666" width="346" height="13.333333333333343"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <rect key="frame" x="0.0" y="223.66666666666666" width="346" height="20.333333333333343"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="32e-eT-a4u" firstAttribute="top" secondItem="LFe-RH-KeK" secondAttribute="bottom" constant="8" id="0Su-r8-iqe"/>
                                         <constraint firstItem="32e-eT-a4u" firstAttribute="top" secondItem="LFe-RH-KeK" secondAttribute="bottom" id="0eO-Z4-i3c"/>
                                         <constraint firstItem="32e-eT-a4u" firstAttribute="leading" secondItem="QFj-yt-rIr" secondAttribute="leading" id="2bH-Gl-aoo"/>
                                         <constraint firstItem="LFe-RH-KeK" firstAttribute="top" secondItem="XOQ-ZZ-bIu" secondAttribute="bottom" constant="4" id="6JE-KS-6Bu"/>
+                                        <constraint firstItem="LFe-RH-KeK" firstAttribute="top" secondItem="XOQ-ZZ-bIu" secondAttribute="bottom" constant="8" id="6tX-aN-Mbw"/>
+                                        <constraint firstItem="XOQ-ZZ-bIu" firstAttribute="top" secondItem="QFj-yt-rIr" secondAttribute="top" id="7Wo-O6-xSE"/>
                                         <constraint firstAttribute="trailing" secondItem="XOQ-ZZ-bIu" secondAttribute="trailing" id="7uG-95-MFi"/>
                                         <constraint firstItem="LFe-RH-KeK" firstAttribute="leading" secondItem="QFj-yt-rIr" secondAttribute="leading" id="FQZ-mn-37s"/>
                                         <constraint firstItem="LFe-RH-KeK" firstAttribute="top" secondItem="XOQ-ZZ-bIu" secondAttribute="bottom" constant="8" symbolic="YES" id="OUG-di-6wf"/>
                                         <constraint firstItem="XOQ-ZZ-bIu" firstAttribute="top" secondItem="QFj-yt-rIr" secondAttribute="top" id="Tc3-t8-oTh"/>
+                                        <constraint firstAttribute="trailing" secondItem="LFe-RH-KeK" secondAttribute="trailing" constant="4" id="a0K-up-fqG"/>
                                         <constraint firstItem="XOQ-ZZ-bIu" firstAttribute="leading" secondItem="QFj-yt-rIr" secondAttribute="leading" id="bBC-4p-Chc"/>
                                         <constraint firstAttribute="trailing" secondItem="32e-eT-a4u" secondAttribute="trailing" id="fjV-of-6SC"/>
                                         <constraint firstItem="LFe-RH-KeK" firstAttribute="top" secondItem="XOQ-ZZ-bIu" secondAttribute="bottom" constant="8" id="gou-ek-Inf"/>
+                                        <constraint firstItem="XOQ-ZZ-bIu" firstAttribute="leading" secondItem="QFj-yt-rIr" secondAttribute="leading" id="hhh-hr-IZG"/>
+                                        <constraint firstItem="LFe-RH-KeK" firstAttribute="leading" secondItem="QFj-yt-rIr" secondAttribute="leading" constant="4" id="mnQ-CH-gLG"/>
+                                        <constraint firstItem="LFe-RH-KeK" firstAttribute="top" secondItem="XOQ-ZZ-bIu" secondAttribute="bottom" constant="8" id="pvU-go-qfT"/>
+                                        <constraint firstItem="LFe-RH-KeK" firstAttribute="top" secondItem="XOQ-ZZ-bIu" secondAttribute="bottom" constant="8" id="qAW-q3-4pA"/>
+                                        <constraint firstItem="32e-eT-a4u" firstAttribute="top" secondItem="LFe-RH-KeK" secondAttribute="bottom" id="qLs-rQ-f0n"/>
                                         <constraint firstAttribute="trailing" secondItem="LFe-RH-KeK" secondAttribute="trailing" id="tXo-S5-dno"/>
+                                        <constraint firstAttribute="trailing" secondItem="XOQ-ZZ-bIu" secondAttribute="trailing" id="umw-Sb-D1C"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="346" height="288"/>
                                 <connections>
-                                    <outlet property="heightContraint" destination="9SS-oN-zrd" id="cd7-6h-9Jg"/>
+                                    <outlet property="heightContraint" destination="9SS-oN-zrd" id="AyJ-b1-YYK"/>
                                     <outlet property="moviesDescriptionLabel" destination="32e-eT-a4u" id="1fi-hS-mP1"/>
                                     <outlet property="moviesImage" destination="XOQ-ZZ-bIu" id="q8K-yT-eYE"/>
                                     <outlet property="moviesTitleLabel" destination="LFe-RH-KeK" id="xKi-eg-bS0"/>

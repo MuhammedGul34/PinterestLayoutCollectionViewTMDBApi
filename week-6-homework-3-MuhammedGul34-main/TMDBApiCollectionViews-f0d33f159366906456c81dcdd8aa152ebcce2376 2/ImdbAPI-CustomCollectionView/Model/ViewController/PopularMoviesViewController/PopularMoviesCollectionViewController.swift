@@ -11,19 +11,20 @@ import AVFoundation
 
 class PopularMoviesCollectionViewController: UICollectionViewController {
     
-    var data : PopularMoviesCustomCell?
     
-    var movies : [Result]? {
+    
+    var museums: [Datum]? {
         didSet {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         }
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
         
         collectionView?.contentInset = UIEdgeInsets(top: 12, left: 4, bottom: 12, right: 4)
         
@@ -31,12 +32,13 @@ class PopularMoviesCollectionViewController: UICollectionViewController {
             layout.delegate = self
         }
         
-        fetchMovies()
+        fetchMuseums()
+
     }
     
-    private func fetchMovies(){
+    private func fetchMuseums(){
         
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=aa832f9d260b9356aabd10fb60198527&language=en-US&page=1") else { return }
+        guard let url = URL(string: "https://api.artic.edu/api/v1/artworks/search?query[term][is_boosted]=true&fields[]=title&fields[]=artist_display&fields[]=image_id&fields[]=publication_history&limit=14") else { return }
         
         let request = URLRequest(url: url)
         
@@ -46,9 +48,9 @@ class PopularMoviesCollectionViewController: UICollectionViewController {
             }
             if let data = data {
                 do {
-                    let result = try JSONDecoder().decode(Movies.self, from: data)
+                    let museum = try JSONDecoder().decode(Museums.self, from: data)
                     DispatchQueue.main.async {
-                        self.movies = result.results
+                        self.museums = museum.data
                     }
                 } catch let error {
                     print("Failed to decode", error)
@@ -64,8 +66,8 @@ class PopularMoviesCollectionViewController: UICollectionViewController {
 extension PopularMoviesCollectionViewController
 {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let movies = movies {
-            return movies.count
+        if let museums = museums {
+            return museums.count
         } else {
             return 0
         }
@@ -75,8 +77,8 @@ extension PopularMoviesCollectionViewController
     {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PopularMoviesCustomCell
-        if let movies = movies?[indexPath.row]{
-            cell.onBind(data: movies)
+        if let museums = museums?[indexPath.row]{
+            cell.onBind(data: museums)
         }
         return cell
     }
@@ -86,23 +88,24 @@ extension PopularMoviesCollectionViewController : PinterestLayoutDelegate
 {
     func collectionView(collectionView: UICollectionView, heightForPhotoAt indexPath: IndexPath, with width: CGFloat) -> CGFloat
     {
+             
+            let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
+            // TODO: fix This
         
+            let rect = AVMakeRect(aspectRatio: .init(width: 200, height: 400), insideRect: boundingRect)
+            return rect.size.height
         
-        let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
-        // TODO: fix This
-    
-        let rect = AVMakeRect(aspectRatio: .init(width: 200, height: 400), insideRect: boundingRect)
-        return rect.size.height
         
     }
     
     func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat
     {
-        if let movies = movies?[indexPath.item] {
+        if let museums = museums?[indexPath.item] {
+            
             let topPadding = CGFloat(8)
             let bottomPadding = CGFloat(12)
             let captionFont = UIFont.systemFont(ofSize: 15)
-            let captionHeight = self.height(for: movies.overview, with: captionFont, width: width)
+            let captionHeight = self.height(for: museums.publicationHistory ?? "no puplication", with: captionFont, width: width)
             let profileImageHeight = CGFloat(36)
             let height = topPadding + captionHeight + topPadding + profileImageHeight + bottomPadding
             
@@ -120,4 +123,9 @@ extension PopularMoviesCollectionViewController : PinterestLayoutDelegate
         let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxHeight), options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
         return ceil(boundingRect.height)
     }
+}
+
+struct imageSize {
+    var width: Int
+    var height: Int
 }

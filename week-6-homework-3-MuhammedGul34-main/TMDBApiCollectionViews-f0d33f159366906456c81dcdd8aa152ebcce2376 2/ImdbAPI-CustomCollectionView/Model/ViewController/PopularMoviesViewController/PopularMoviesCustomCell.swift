@@ -14,6 +14,7 @@ class PopularMoviesCustomCell: UICollectionViewCell {
         
     @IBOutlet weak var heightContraint: NSLayoutConstraint!
     
+   
     override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes)
     {
         super.apply(layoutAttributes)
@@ -23,12 +24,12 @@ class PopularMoviesCustomCell: UICollectionViewCell {
         }
     }
 
-    
-    func onBind(data:Result){
+
+    func onBind(data:Datum){
         moviesTitleLabel.text = data.title
-        moviesDescriptionLabel.text = data.overview
         
-        guard let url = URL(string: "https://image.tmdb.org/t/p/w342/\(data.posterPath)") else { return }
+        moviesDescriptionLabel.text = data.publicationHistory
+        guard let url = URL(string: "https://www.artic.edu/iiif/2/\(data.imageID)/full/200,400/0/default.jpg") else { return }
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data, response, error in
             
@@ -49,3 +50,4 @@ class PopularMoviesCustomCell: UICollectionViewCell {
         }.resume()
     }
 }
+
